@@ -61,3 +61,46 @@ print(x3 is y3)
 '''2. Perform data and data type operations'''
 #http://luckypants.weebly.com/datatype-conversion.html - Read this to understand conversions in Python
 
+''' 3. construct data structures; perform indexing and slicing operations'''
+# Before you continue with this topic, read about the differences between mutable and immutable types in Python
+#Lists - are mutable
+# Create a list
+list1 = [5,6,7,8,9]
+list2 = [1,2,3,4]
+#Append to end of list
+list2.append("Hello") #Appends and returns None
+list2.append("World!")
+print(list2)
+#Check what happens when you append one list to another
+list2.append(list1)
+#It just appends the whole list and not each element of the list
+print(list2) #OUTPUT: [1, 2, 3, 4, 'Hello', 'World!', [5, 6, 7, 8, 9]]
+
+#What if I want to append each element one by one? Use the concatenate + operator
+list3 = [10,11]
+list2 = list2 + list3
+print(list2) # Output: [1, 2, 3, 4, 'Hello', 'World!', [5, 6, 7, 8, 9], 10, 11]
+
+#Indexing and slicing
+list4 = ['My', 'Name', "is", "Tom", "and", "my", "lucky", "numbers", "are", [9,19,22]]
+#Index starts from 0 to len-1 so if I want just the name i.e Tom from the list I would do
+print(list4[3])
+#Negative indices are also allowed. So -1 would be the last element and -len would be the first element
+print(list4[-1])
+#DO you know what I am doing here? Basically -len would be the first element of the list
+print(list4[-len(list4)])
+
+'''You can use slicing to print elements for a range of indices. Slicing is [fromIndexIncluded:ToIndexExcluded] so if you wanted elements
+from index 2 to index 5 you would do [2:6]
+Example: Say you just wanted to print the part "My name is Tom" from list4, you would do:
+'''
+print(list4[:4]) #Missing start index means 0 by default
+#And print lucky numbers you would do:
+print(list4[5:]) #Missing end index means till end of list
+#To print "Tom and my":
+print(list4[3:6])
+
+
+
+
+
