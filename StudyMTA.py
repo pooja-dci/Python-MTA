@@ -61,7 +61,7 @@ print(x3 is y3)
 '''2. Perform data and data type operations'''
 #http://luckypants.weebly.com/datatype-conversion.html - Read this to understand conversions in Python
 
-''' 3. construct data structures; perform indexing and slicing operations'''
+'''construct data structures; perform indexing and slicing operations'''
 # Before you continue with this topic, read about the differences between mutable and immutable types in Python
 #Lists - are mutable
 # Create a list
@@ -82,25 +82,61 @@ list2 = list2 + list3
 print(list2) # Output: [1, 2, 3, 4, 'Hello', 'World!', [5, 6, 7, 8, 9], 10, 11]
 
 #Indexing and slicing
-list4 = ['My', 'Name', "is", "Tom", "and", "my", "lucky", "numbers", "are", [9,19,22]]
+learnLists = ['My', 'Name', "is", "Tom", "and", "my", "lucky", "numbers", "are", [9,19,22]]
 #Index starts from 0 to len-1 so if I want just the name i.e Tom from the list I would do
-print(list4[3])
+print(learnLists[3])
 #Negative indices are also allowed. So -1 would be the last element and -len would be the first element
-print(list4[-1])
+print(learnLists[-1])
 #DO you know what I am doing here? Basically -len would be the first element of the list
-print(list4[-len(list4)])
+print(learnLists[-len(learnLists)])
 
 '''You can use slicing to print elements for a range of indices. Slicing is [fromIndexIncluded:ToIndexExcluded] so if you wanted elements
 from index 2 to index 5 you would do [2:6]
-Example: Say you just wanted to print the part "My name is Tom" from list4, you would do:
+Example: Say you just wanted to print the part "My name is Tom" from learnLists, you would do:
 '''
-print(list4[:4]) #Missing start index means 0 by default
+print(learnLists[:4]) #Missing start index means 0 by default
 #And print lucky numbers you would do:
-print(list4[5:]) #Missing end index means till end of list
+print(learnLists[5:]) #Missing end index means till end of list
 #To print "Tom and my":
-print(list4[3:6])
+print(learnLists[3:6])
+
+#What do you think this will print?
+print(learnLists[1:-1])
 
 
 
+#in operator - check if an element is in list
+print("and" in learnLists) #True
+print("Hello" in learnLists) #False
+print(9 in learnLists) #False because it's inside a list that's inside learnLists
 
+#Min and max - When all the elements in the list are of same type you can use min and max
+print(min([1,4,88,99,1234,56,60,1,52]))
+print(max([1,4,88,99,1234,56,60,1,52]))
+
+#index methods returns position of the element in the list - so it's basically equivalent index_of(someElement)
+print(learnLists.index("lucky"))
+#print(learnLists.index("Hello")) #Raises value error: ValueError: 'Hello' is not in list
+
+'''  3. Determine the sequence of execution based on operator precedence &
+     4.Select the appropriate operator to achieve the intended result'''
+
+'''
+Precendence Order:
+
+    Highest Precedence:	()	Parentheses
+                        **	Exponentiation
+                        *	Multiplication
+                        /	Division
+                        +	Addition
+    Lowest Precedence:	–	Subtraction
+'''
+
+x = 3 * (2 + 1)
+y = 3 * 2 + 1
+print(x)
+print(y)
+#Inner most parentheses has precendence in a nested parentheses statement. Example:
+z = ( ( ( ( 13 + 5 ) * 2 ) - 4 ) / 2)
+print(z)
 
