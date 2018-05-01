@@ -71,6 +71,6 @@ dict1['Hello'] = 'World'
 #Let's try adding a mutable object as key
 '''dict1[[1,2,3]] = [4,5,6] #TypeError: unhashable type: 'list'''
 
-#Construct a database: A list of tuples each tuple containing key and value
+#Construct a dict: A list of tuples each tuple containing key and value
 dict2 = dict([('hello','world'), (1,2), ('why', 'how')])
 print(dict2)
